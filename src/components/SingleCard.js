@@ -5,6 +5,7 @@ export default function SingleCard({card,handleChoice}) {
 
   const handleClick = () => {
     handleChoice(card);
+    console.log(card);
   }
 
   return (
