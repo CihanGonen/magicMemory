@@ -54,10 +54,8 @@ function App() {
             }
           })
         });
-      }else{
- 
       }
-      resetTurn();
+      setTimeout(()=>resetTurn(),1000)
     }
   },[choiceOne,choiceTwo])
 
@@ -70,7 +68,13 @@ function App() {
 
       <div className="card-grid">
         {cards.map(card => {
-          return <SingleCard key={card.id} card={card} handleChoice={handleChoice} />
+          return (
+          <SingleCard 
+            key={card.id} 
+            card={card} 
+            handleChoice={handleChoice} 
+            flipped={card===choiceOne || card===choiceTwo || card.matched} 
+          />)
         })}
       </div>
 
